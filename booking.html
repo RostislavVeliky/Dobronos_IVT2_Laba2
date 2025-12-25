@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Онлайн запись в автосервис - удобная форма бронирования">
+  <meta name="keywords" content="запись в автосервис, онлайн запись, бронирование автосервиса">
+  <title>Запись на обслуживание - АвтоСервис PRO</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+        </svg>
+        <span class="logo-text">АвтоСервис PRO</span>
+      </div>
+      <nav class="nav-desktop">
+        <a href="index.html" class="nav-link">Главная</a>
+        <a href="services.html" class="nav-link">Услуги</a>
+        <a href="booking.html" class="nav-link active">Запись</a>
+        <a href="contacts.html" class="nav-link">Контакты</a>
+      </nav>
+      <div class="header-phone">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>+7 (999) 111-11-11</span>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="mobileMenu">
+      <a href="index.html" class="nav-mobile-link">Главная</a>
+      <a href="services.html" class="nav-mobile-link">Услуги</a>
+      <a href="booking.html" class="nav-mobile-link active">Запись</a>
+      <a href="contacts.html" class="nav-mobile-link">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Booking Section -->
+<section class="page-content booking-page">
+  <div class="container">
+    <div class="booking-container">
+      <h1 class="page-title">Запись на обслуживание</h1>
+      <p class="page-subtitle">Заполните форму и мы свяжемся с вами для подтверждения записи</p>
+
+      <div class="booking-form-wrapper">
+        <div class="form-group">
+          <label for="name" class="form-label">Ваше имя *</label>
+          <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Введите ваше имя"
+                  required
+                  minlength="2"
+                  maxlength="50"
+          >
+          <span class="form-error" id="nameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="form-label">Телефон *</label>
+          <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  placeholder="+7 (999) 123-45-67"
+                  required
+                  pattern="[\+]?[0-9]{1,4}?[\s\-\(\)]?[0-9]{1,4}?[\s\-\(\)]?[0-9]{1,4}?[\s\-\(\)]?[0-9]{1,9}"
+          >
+          <span class="form-error" id="phoneError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="example@mail.com"
+          >
+          <span class="form-error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="service" class="form-label">Выберите услугу *</label>
+          <select
+                  id="service"
+                  name="service"
+                  class="form-input"
+                  required
+          >
+            <option value="">Выберите услугу</option>
+            <option value="diagnostics">Диагностика двигателя</option>
+            <option value="oil">Замена масла</option>
+            <option value="suspension">Ремонт подвески</option>
+            <option value="tires">Шиномонтаж</option>
+            <option value="maintenance">Техобслуживание</option>
+            <option value="brakes">Ремонт тормозов</option>
+          </select>
+          <span class="form-error" id="serviceError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="date" class="form-label">Предпочитаемая дата</label>
+          <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  class="form-input"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="message" class="form-label">Комментарий</label>
+          <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  rows="4"
+                  placeholder="Опишите проблему или пожелания"
+                  maxlength="500"
+          ></textarea>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-submit" id="submitBtn">
+          Отправить заявку
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <svg class="footer-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+          </svg>
+          <span>АвтоСервис PRO</span>
+        </div>
+        <p class="footer-text">Профессиональный ремонт и обслуживание автомобилей с 2010 года</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Контакты</h3>
+        <p class="footer-text">+7 (999) 111-11-11</p>
+        <p class="footer-text">info@autoservice.ru</p>
+        <p class="footer-text">г. Горловка, ул. Автомобильная, 15</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Режим работы</h3>
+        <p class="footer-text">Пн-Пт: 8:00 - 20:00</p>
+        <p class="footer-text">Сб-Вс: 9:00 - 18:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 АвтоСервис PRO. Все права защищены.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
